@@ -11,7 +11,7 @@ for (let touche of nombreEl){
 for (let op of operatorEl){
     op.addEventListener("click",operator);
 }
-computeEl.addEventListener("click",function(){
+computeEl.addEventListener("click",function(){   
     total.innerText = eval(memoire);
 })
 clearTouche.addEventListener("click",function(){
@@ -26,7 +26,7 @@ function operator(){
 }
 function gererTouche(){
     let touche = this.innerText;
-    if(parseFloat(touche) >= 0){
+    if(parseFloat(touche) >= 0 || touche === "."){
         memoire = memoire + touche.toString();
         display.innerText = memoire;
     }

@@ -62,8 +62,9 @@ body {
 }
 
 #compute,
-#clear {
-    width: calc(50% - 60px);
+#clear,
+#bottom .number{
+    width: calc(25% - 60px);
 }
 
 
