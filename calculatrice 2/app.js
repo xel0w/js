@@ -26,17 +26,10 @@ function calculer(nb1, nb2, operation){
 }
 function operator(){
     op = this.innerText;
-    switch(op){
-        case "+":
-        case "-":
-        case "/":
-        case "*":
-        precedent = (precedent === 0) ? parseFloat(affichage) : calculer(precedent, parseFloat(affichage), operation);
-        total.innerText = precedent+op;
-        operation = op;
-        affichage = "";
-        break;     
-}
+    precedent = (precedent === 0) ? parseFloat(affichage) : calculer(precedent, parseFloat(affichage), operation);
+    total.innerText = precedent+op;
+    operation = op;
+    affichage = "";  
 }
 for (let touche of nombreEl){
     touche.addEventListener("click", gererTouche);
@@ -55,7 +48,3 @@ clearTouche.addEventListener("click",function(){
     display.innerText = affichage;
     total.innerText = "";
 })
-
-
-
-
