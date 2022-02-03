@@ -10,7 +10,6 @@ let clearTouche = document.querySelector("#clear");
 let total = document.querySelector("#total");
 function gererNombre(){
     let touche = this.innerText;
-    console.log(touche)
     if(parseFloat(touche) >= 0 || touche === "."){
         affichage = affichage + touche.toString();
         display.innerText = affichage;

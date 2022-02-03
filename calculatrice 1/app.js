@@ -14,6 +14,7 @@ function gererTouche(){
 }
 function operator(){
     op = this.innerText;
+    console.log(op)
     memoire = memoire + op
     display.innerText = memoire;
 }
