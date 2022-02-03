@@ -8,8 +8,9 @@ let operatorEl = document.querySelectorAll(".op");
 let computeEl = document.querySelector("#compute");
 let clearTouche = document.querySelector("#clear");
 let total = document.querySelector("#total");
-function gererTouche(){
+function gererNombre(){
     let touche = this.innerText;
+    console.log(touche)
     if(parseFloat(touche) >= 0 || touche === "."){
         affichage = affichage + touche.toString();
         display.innerText = affichage;
@@ -30,9 +31,10 @@ function operator(){
     total.innerText = precedent+op;
     operation = op;
     affichage = "";  
+    display.innerText=affichage;
 }
 for (let touche of nombreEl){
-    touche.addEventListener("click", gererTouche);
+    touche.addEventListener("click", gererNombre);
 }
 for (let op of operatorEl){
     op.addEventListener("click",operator);
@@ -42,9 +44,11 @@ computeEl.addEventListener("click",function(){
     total.innerText = precedent;
     affichage = precedent;
     precedent = 0;
+    display.innerText=""
 })
-clearTouche.addEventListener("click",function(){
+clearTouche.addEventListener("click",nettoyer);
+function nettoyer(){
     affichage = ""
     display.innerText = affichage;
     total.innerText = "";
-})
+}
